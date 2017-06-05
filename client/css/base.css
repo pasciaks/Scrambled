@@ -1,0 +1,485 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:700);
+    /* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:95%;
+    vertical-align:baseline;
+    background:transparent;
+    overflow:hidden;
+    cursor:hand;
+    -moz-user-select: none; -webkit-user-select: none; -ms-user-select:none; user-select:none;-o-user-select:none;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration:none;
+    color:white;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+
+*:focus {
+    outline: none;
+}
+
+
+
+
+.wordtab {
+position:absolute;
+top:0px;
+opacity:1;
+font-size:18pt;
+right:0px;
+width:120px;
+height:18px;
+background-color:rgba(132,132,132,0.8);    
+color:white;
+border-bottom-left-radius:4px;
+padding:0px 5px 0px 5px;
+}
+
+.wordopen{
+ background-color:rgba(232,232,232,0.4);    
+ width:120px;
+ opacity:1;
+ height:auto;
+ max-height:200px;
+ font-size:18pt;
+ top:0px;
+ border-bottom-left-radius:9px;
+ padding:0px 5px 5px 5px;
+}
+
+
+.titlebar{
+position:absolute; 
+background: url(/img/bat.png) no-repeat ;
+background-size: 120px;
+background-position: 0% 50%;
+background-color:#d3d3d3;
+bottom:0;
+width:100%;
+height:32px;
+padding-left:0px;
+border:0px dotted #d3d3d3;
+font-size:20px;
+text-align: center;
+vertical-align: middle;   
+    
+}
+
+.colorbadge{
+ border: 1px dotted black;   
+ width:20px;
+ color:black;
+}
+
+
+
+#logonscreen{
+z-index:99999;
+margin: 0 auto;
+   position: fixed;
+     margin: auto;
+     top: 0;     
+     left: 0;
+     width:100%;
+     height:100%;
+    background-color:black;  
+    display:none;
+    font-family:"Arial Black", Gadget, sans-serif ;
+    
+}
+
+#logonbox {
+    margin: 0 auto;
+    border:2px solid #d3d3d3;
+    border-radius:10px;
+    width:90%;
+    min-width:300px;
+    height:80%;
+    top:10%;
+    position: relative;     
+    background-color:#000000;   
+    text-align: center;
+    vertical-align: middle;    
+    font-size:11px;
+    font-family:"Arial", Gadget, sans-serif ;
+    font-style: italic;
+}
+
+.logonlogo {
+ position:absolute;
+ width:100%;
+ height:100%;
+ background: url(/img/l.png) no-repeat ;
+ cursor:hand;
+
+}
+
+#logon {
+ cursor:hand; 
+ margin: 0 auto;
+ width: 0 auto; 
+ font-family:"Arial Black", Gadget, sans-serif ;
+}
+
+.logonbutplay {
+ cursor:hand;
+ width:80px;
+ 
+ background-color:white;
+ border-radius:5px;
+ border:2px solid black;
+ margin:auto;
+ padding-top:5px;
+ padding-bottom:5px;
+ font-family:"Arial Black", Gadget, sans-serif ;
+ font-style: normal;
+ font:18pt verdana;
+}
+.logonbut:hover {
+ cursor:hand;
+ width:60px;
+ background-color:black;
+ color:white;
+ border-radius:5px;
+ border:1px solid White;
+ margin:auto;
+ padding-top:5px;
+ padding-bottom:5px;
+ font-family:"Arial Black", Gadget, sans-serif ;
+ font-style: normal;
+}
+.logonbut:active {
+ background-color:pink; 
+}
+
+.logonbut {
+ cursor:hand;
+ width:60px;
+ background-color:white;
+ border-radius:5px;
+ border:1px solid black;
+ margin:auto;
+ padding-top:5px;
+ padding-bottom:5px;
+ font-family:"Arial Black", Gadget, sans-serif ;
+ font-style: normal;
+}
+.logonbut:hover {
+ cursor:hand;
+ width:60px;
+ background-color:black;
+ color:white;
+ border-radius:5px;
+ border:1px solid White;
+ margin:auto;
+ padding-top:5px;
+ padding-bottom:5px;
+ font-family:"Arial Black", Gadget, sans-serif ;
+ font-style: normal;
+}
+.logonbut:active {
+ background-color:gray; 
+}
+
+#oldrandomnick{
+ cursor:hand;  
+ background-color:white;
+ border-radius:5px;
+ border:1px solid black; 
+width:120px;
+margin: 0 auto;
+ padding-top:2px;
+ padding-bottom:2px;
+}
+
+
+#oldrandomnick:hover{
+ cursor:hand;  
+ background-color:white;
+ border-radius:5px;
+ border:1px solid black; 
+width:120px;
+margin: 0 auto;
+ padding-top:2px;
+ padding-bottom:2px;
+ background-color:yellow;
+}
+
+
+#username{
+    text-align:center;
+}
+
+#winscreen{
+z-index:990;
+margin: 0 auto;
+   position: fixed;
+     margin: auto;
+     top: 0;     
+     left: 0;
+     width:100%;
+     height:100%;
+    background-color:white;    
+    display:none;
+}
+
+
+#winscreentext {
+    margin: 0 auto;
+    border:8px solid black;
+    width:50%;
+    height:50%;
+    top:25%;
+    position: relative;     
+    background-color:#aaaaaa;   
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+#finalwords {
+    width:100px;    
+    float:left;
+    border: 1px solid red;
+    color:white;
+}
+
+#SCORES{
+    float:left;
+    border: 1px solid red;
+}
+
+
+#TEAMTALLY{
+    float:left;
+    border: 1px solid red;
+}
+
+#showinfobutton{
+ font-size:9pt;
+ width:100px;
+ height:34px; 
+  
+}
+
+
+#otherwordlist {
+ width:180px;
+ float:left;
+}
+
+.clear{
+ clear:both;   
+}
+
+#username{
+ font-family:"Arial Black", Gadget, sans-serif ;
+ font-size:18px;
+ border-radius:10px;  
+ width:230px;
+ padding:0px 5px 0px 5px;
+ border:1px solid black;
+}
+
+.goal {
+float:right;  
+padding-right:10px;
+}
+
+.btn {
+ text-align: center;
+ vertical-align: middle;
+ cursor:hand;
+ width:70px;
+ background-color:white;
+ border-radius:5px;
+ border:1px solid black;
+ margin:auto;
+ padding-top:5px;
+ padding-bottom:5px;
+ font-family:"Times New Roman Black", Gadget, sans-serif ;
+ font-style: normal;
+}
+.btn:hover {
+ cursor:hand;
+ width:70px;
+ background-color:#82E0AA;
+ color:white;
+ border-radius:5px;
+ border:1px solid White;
+ margin:auto;
+ padding-top:5px;
+ padding-bottom:5px;
+ font-family:"Times New Roman Black", Gadget, sans-serif ;
+ font-style: normal;
+}
+.btn:active {
+ background-color:gray; 
+}
+
+.helpButton {
+    color: gold;
+    padding:0 0 0 0 ;
+}
+
+.helpButton:hover {
+    color: BLACK;
+    padding:0 0 0 0 ;
+    background-color: GOLD;
+    
+}
+
+/*  create some rudimentary styling for our tooltip class */
+.tooltip{
+    display: inline;
+    position: relative;
+}
+
+.tooltip:hover:after{
+    background: #333;
+    background: rgba(0,0,0,.8);
+    border-radius: 5px;
+    bottom: 26px;
+    color: #fff;
+    content: attr(title);
+    left: 20%;
+    padding: 5px 15px;
+    position: absolute;
+    z-index: 98;
+    width: 220px;
+    content: attr(title);
+}
+
+.tooltip:hover:before{
+    border: solid;
+    border-color: #333 transparent;
+    border-width: 6px 6px 0 6px;
+    bottom: 20px;
+    content: "";
+    left: 50%;
+    position: absolute;
+    z-index: 99;
+}
+
+#textmsg {
+    color:white;
+    font:12pt verdana;
+}
+
+#help {
+    font:12pt Verdana;
+    color:white;
+    border:1px solid gray;
+}
+
+.outerbox {
+    border: 0px solid #CCC;
+}
+.leftbox {
+    width: 50%;
+    float: left;
+}
+.rightbox {
+    width: 50%;
+    float: left;
+}
+
+.scrollable {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+}

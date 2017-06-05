@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <title>publicpuzzle.com</title>
+
+  <meta charset="utf-8">
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta property="og:url" content="http://publicpuzzle.com/" />
+  <meta property="og:type" content="Game" />
+  <meta property="og:title" content="Play with the public at publicpuzzle.com" />
+  <meta property="og:description" content="Real people, real time, real game." />
+  <meta property="og:image" content="http://publicpuzzle.com/img/l.png" />
+
+  <link rel="stylesheet" type="text/css" href="css/base.css">
+  <link rel="stylesheet" href="css/hint.css">
+
+</head>
+
+<body>
+
+  <div id="logonscreen" style="display:none;">
+
+    <a href="http://publicpuzzle.com">
+      <div id="logo" class="logonlogo"><br /><br />Stop playing with yourself.</div>
+    </a>
+
+    <div id="logonbox" style="background-color:black;"> <br />
+
+      <p hidden> Welcome ... Please pick and name a click start to begin. </p>
+      <label for="username"></label> <input type="text" name="username" id="username" maxlength="15" value="unknown" /> <br />
+      <br />
+      
+       <div id="logonbut" class="logonbutplay">Play</div>
+       
+<br />
+       <div hidden id="help">
+          <p style="color:black;">
+            SCRAMBLED! In this game, all players get the same random set of letters. Use the letters to spell words. You get three points for each letter in the word. Words already found don't count. Create longer words for more points and power up buttons.
+          <br />
+          <a href="mailto:sheldon@pasciak.com"><span style="color:black;">[Contact Me]</span></a>
+          </p><br />
+        </div>
+        <br />
+      <p style="color:black;font:12pt verdana;">Choose your Opponent</p>
+      <select autofocus class="form-control" id="opponentchoice">
+          <option value="Yourself">Yourself</option>
+        </select>
+      <br />
+      <br />
+
+      <div id="logon">
+        <div class="outerbox">
+          <div class="leftbox">
+            <div id="randomnick" class="logonbut">(NickName)</div>
+          </div>
+          <div class="rightbox">
+            <div id="logonbutquiet" class="logonbut">Play Quietly</div>
+          </div>
+        </div>
+
+<br /><br />
+
+        <div id="textmsg"><span style="color:black;">Help</span></div>
+        <br /><br />
+        <a href="./info.html"><span style="color:black;">Info</span></a>
+
+        <br /><br />
+
+        <p hidden style="color:green;">Click, Tap or Drag Letters to Spell Words.</p>
+
+      </div>
+
+    </div>
+
+    <div id="status">
+    </div>
+
+
+  </div>
+
+  <div id="alert" style="position:absolute;top:0px;left:0px;background-color:red;color:white;font-size:18px;display:none;"> ALERT </div>
+
+  <div HIDDEN id="FULLS" class="btn" style='position:absolute;right:0;' onclick='fulls()'>FS</div>
+
+  <div id='thewordlist' style='text-align:center;color:black;background-color:white;position:absolute;left:0;top:0;height:80px;right:0;border:0px solid red;'>
+
+    <p style="font:12pt Times New Roman;color:black;" id="listing">Scrambled Words</p>
+    <p id="opp"></p>
+    <span hidden id="containerhighplayer" style="font:10pt COURIER;color:black"></span>
+    <p hidden id="highplayer"></p>
+    <p class='scrollable' id="wordsfound"></p>
+
+  </div>
+  
+<div class="container">
+  <h2>Welcome</h2>
+  
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">SCRAMBLED</h4>
+        </div>
+        
+        <div class="modal-body">
+          <p id="modalinfo">Hope you enjoy playing with yourself.</p>
+        </div>
+    
+      </div>
+    </div>
+  </div>
+</div>  
+
+  <div id="submitWord" class="btn" style='position:absolute;right:0px;bottom:0px;font:10pt Times New Roman;'>CHECK</div>
+
+  <div id="getNewPuzzle" class="btn" style='position:absolute;left:160px;width:70;bottom:0px;font:10pt Times New Roman;'>NEW</div>
+  <div id="getNewOPP" class="btn" style='position:absolute;left:0px;bottom:70px;width:70px;font:10pt Times New Roman;'>START</div>
+
+  <div id="powerup" class="btn" style='position:absolute;left:0px;bottom:0px;width:70px;'>STOP</div>
+
+  <div id="powerup2" class="btn" style='position:absolute;left:80px;bottom:0px;width:70px;'>ALIGN</div>
+
+  <div id="quit" class="btn" style='position:absolute;left:0px;top:0px;width:50px;font:10pt Times New Roman;'>Quit</div>
+  <div id="timer" class="btn2" style='position:absolute;left:0px;top:70px;width:70px;font:8pt times new roman;'></div>
+  <div id="scores" class="btn" style='position:absolute;right:0px;top:0px;width:50pxfont:10pt Times New Roman;;'>Scores</div>
+
+  <div id="titlescreen" style="z-index:990;margin: 0 auto;   position: fixed;     margin: auto;     top: 0;          left: 0;     width:100%;     height:100%;    background-color:black;color:white;">
+    <div class="logonlogo"> </div>
+    <div id="titlescreentext" style="    margin: 0 auto;  width:50%;    height:50%;    top:25%;   position: relative;         color:white;    text-align: center;  vertical-align: middle;">
+      LOADING...
+    </div>
+  </div>
+
+  <div id="overlay" style="border:22px solid red;position:absolute;top:0px;width:100%;height:100%;display:none;"></div>
+
+  <div hidden id="badd" style="background:red;border:1px solid gold;position:absolute;top:0px;width:100%;height:100%;display:none;"></div>
+
+  <div hidden id="goood" style="background:green;border:1px solid gold;position:absolute;top:0px;width:100%;height:100%;display:none;"></div>
+
+  <div hidden id="instructions" style="background:green;border:1px solid gold;text-align:center;position:absolute;top:0px;width:100%;height:100%;display:none;">
+    Instructions: Click , tap , or drag and drop letters to spell words of 2 letters or longer.
+  </div>
+
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.11/pixi.min.js"></script>
+  <script src="/js/ion.sound.min.js"></script>
+  <script src="/js/base.js"></script>
+  
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
